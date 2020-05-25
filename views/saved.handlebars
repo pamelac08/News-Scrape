@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <span class="navbar-brand">News Scraper</span>
+  {{!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> --}}
+  {{!-- <div class="collapse navbar-collapse" id="navbarNav"> --}}
+  <div id="navbarNav"></div>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/saved"></a> <span class="sr-only">(current)</span>Saved Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/scrape">Scrape New Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/clear">Clear Articles</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Saved Articles</h1>
+    <p class="lead">Straight from the other LA (Ruston)</p>
+  </div>
+</div>
+
+<div id="container-body">
+    <div id="savedArticles">
+
+{{#each article}}
+{{#if saved}}
+
+<div class="card">
+  <div class="card-header">
+    <div id="savedCardTitle">{{this.title}}</div>
+
+    <div id="DeleteArticleButton"><button  class="btn btn-primary" id="deleteSaved" data-id="{{this._id}}">Delete from Saved</button></div>
+    <div id="articleNoteButton"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentsModal" id="openComments" data-id="{{this._id}}">Article Notes</button></div>
+    
+  </div>
+  <div class="card-body">
+    
+    <p class="card-text">{{this.link}}</p>
+    <p class="card-text-body">Summary: {{this.summary}}</p>
+   
+  </div>
+</div>
+{{/if}}
+{{/each}}
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="commentsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h3>Saved Comments</h3>
+        <div id="savedComments">
+        </div>
+        <div id="new-comment">
+            <form>
+                 <div class="form-group">
+                    <label for="new-comment-title">Comment Title</label>
+                    <input type="text" class="form-control" id="new-comment-title" placeholder="Enter comment title here">
+                </div>
+                <div class="form-group">
+                    <label for="new-comment-input"></label>
+                    <textarea class="form-control" id="new-comment-body" rows="3" placeholder="Submit new comment here"></textarea>
+                    <button class="btn btn-primary" id="saveComment">Submit</button>
+                </div>
+            </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

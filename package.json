@@ -1,0 +1,27 @@
+{
+  "name": "news-scrape",
+  "version": "1.0.0",
+  "description": "MongoDB HW",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pamelac08/News-Scrape.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pamelac08/News-Scrape/issues"
+  },
+  "homepage": "https://github.com/pamelac08/News-Scrape#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mongoose": "^5.3.16",
+    "morgan": "^1.10.0"
+  }
+}

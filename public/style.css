@@ -1,0 +1,24 @@
+.card {
+    margin: 10px;
+}
+
+#cardTitle {
+    width: 90%;
+    float: left;
+}
+
+#saveArticleButton {
+    width: 10%;
+    float: left;
+}
+
+#savedCardTitle {
+ width: 65%;
+ float: left
+}
+
+#DeleteArticleButton,
+#articleNoteButton {
+ width: 15%;
+ float: left
+}
