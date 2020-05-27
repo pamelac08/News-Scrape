@@ -3,8 +3,6 @@ var exphds = require("express-handlebars");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-
-var db = require("./models");
 var PORT = process.env.PORT || 3000;
 
 var app = express();
@@ -30,10 +28,6 @@ var apiRoutes = require("./routes/apiRoutes");
 app.use(htmlRoutes);
 app.use(apiRoutes);
 
-
-// app.get("/", function(req, res) {
-//     res.render("index");
-// })
 
 
 

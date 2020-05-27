@@ -6,7 +6,8 @@ var ArticleSchema = new Schema({
 
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     summary: {
         type: String
@@ -14,16 +15,17 @@ var ArticleSchema = new Schema({
     },
     link: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     saved: {
         type: Boolean,
         default: false
     },
-    comment: {
+    comment: [{
         type: Schema.Types.ObjectId,
         ref: "Comment"
-    }
+    }]
 });
 
 var Article = mongoose.model("Article", ArticleSchema);

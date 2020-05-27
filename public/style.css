@@ -1,24 +1,42 @@
+
+/* applies to both pages */
 .card {
     margin: 10px;
 }
+#nav,
+.card-header {
+    background-color: darkgray;
+}
+.cardTitle,
+.savedCardTitle {
+    font-size: 2rem;
+}
+.card-text-body {
+    font-size: 1rem;
+}
 
-#cardTitle {
+
+/* index page */
+.cardTitle {
     width: 90%;
     float: left;
 }
-
 #saveArticleButton {
     width: 10%;
     float: left;
 }
 
-#savedCardTitle {
- width: 65%;
- float: left
-}
 
+
+/* saved page */
+
+.savedCardTitle {
+    width: 65%;
+    float: left
+}
 #DeleteArticleButton,
 #articleNoteButton {
- width: 15%;
- float: left
+    width: 15%;
+    float: left
 }
+

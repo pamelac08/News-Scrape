@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" id="nav">
   <span class="navbar-brand">News Scraper</span>
   {{!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -12,9 +12,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/saved"></a> <span class="sr-only">(current)</span>Saved Articles</a>
       </li>
-      <li class="nav-item">
+      {{!-- <li class="nav-item">
         <a class="nav-link" href="/scrape">Scrape New Articles</a>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="/clear">Clear Articles</a>
       </li>
@@ -23,7 +23,7 @@
 </nav>
 
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
+  <div class="container text-center">
     <h1 class="display-4">Saved Articles</h1>
     <p class="lead">Straight from the other LA (Ruston)</p>
   </div>
@@ -37,15 +37,17 @@
 
 <div class="card">
   <div class="card-header">
-    <div id="savedCardTitle">{{this.title}}</div>
+    <div class="savedCardTitle">
+        <a href="https://www.bbc.com{{this.link}}" target="_blank">{{this.title}}</a>
+    </div>
 
-    <div id="DeleteArticleButton"><button  class="btn btn-primary" id="deleteSaved" data-id="{{this._id}}">Delete from Saved</button></div>
+    <div id="DeleteArticleButton"><button  class="btn btn-primary deleteSaved" data-id="{{this._id}}">Delete from Saved</button></div>
     <div id="articleNoteButton"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentsModal" id="openComments" data-id="{{this._id}}">Article Notes</button></div>
     
   </div>
   <div class="card-body">
     
-    <p class="card-text">{{this.link}}</p>
+    {{!-- <p class="card-text">{{this.link}}</p> --}}
     <p class="card-text-body">Summary: {{this.summary}}</p>
    
   </div>

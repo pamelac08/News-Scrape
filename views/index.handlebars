@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light"  id="nav">
   <span class="navbar-brand">News Scraper</span>
   {{!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
 </nav>
 
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
+  <div class="container text-center">
     <h1 class="display-4">News Scraper</h1>
     <p class="lead">Straight from the other LA (Ruston)</p>
   </div>
@@ -37,12 +37,14 @@
 
 <div class="card">
   <div class="card-header">
-    <div id="cardTitle">{{this.title}}</div>
-    <div id="saveArticleButton"><button class="btn btn-primary" id="saveButton" data-id="{{this._id}}">Save Article</button></div>
+    <div class="cardTitle">
+     <a href="https://www.bbc.com{{this.link}}" target="_blank">{{this.title}}</a>
+    </div>
+    <div id="saveArticleButton"><button class="btn btn-primary saveButton" data-id="{{this._id}}">Save Article</button></div>
   </div>
   <div class="card-body">
     
-    <p class="card-text">{{this.link}}</p>
+    {{!-- <p class="card-text">{{this.link}}</p> --}}
     <p class="card-text-body">Summary: {{this.summary}}</p>
    
   </div>
