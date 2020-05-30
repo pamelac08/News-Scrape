@@ -1,8 +1,6 @@
 
 /* ////////////applies to both pages//////////////// */
 
-
-/* home & etc links in nav bar */
 .nav-link {
     display: block;
     padding: 0 .5rem;
@@ -57,11 +55,6 @@
 .article-title:hover {
     color: whitesmoke;
 }
-/* .saveButton,
-.deleteSaved,
-#openComments {
-    background-color: darkgrey;
-} */
 #noArticlesText {
     font-size: 2.65rem;
     font-weight: bolder;
@@ -77,8 +70,7 @@
 
 
 
-
-/* index page */
+/* index page only*/
 .cardTitle {
     width: 90%;
     float: left;
@@ -90,7 +82,9 @@
 
 
 
-/* saved page */
+
+
+/* saved page only*/
 
 .savedCardTitle {
     width: 65%;
@@ -101,26 +95,22 @@
     width: 17%;
     float: left
 }
-
-
-.comment-div {
-    border: 2px solid black;
-}
 .comment-text-div {
-    float: left;
-    width: 70%;
+    margin-top: 0;
 }
 .delete-comment {
-    width: 30%;
-    clear: both;
+   font-size: small;
 }
-.comment-title {
-    font-size: 1rem;
-}
-.comment-body {
-    font-size: 1rem;
-}
-
 #new-comment {
-    margin-top: 5px;
+    margin-top: 30px;
+}
+#new-comment-title-label {
+    font-size: 1.75rem;
+}
+.noCommentDiv {
+    border: 1px solid black;
+    padding: 10px;
+}
+#saveComment {
+    margin-top: 10px;
 }

@@ -17,20 +17,14 @@ app.use(express.static("public"));
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraperHW";
 
-// mongoose.connect("mongodb://localhost/scraperHW", { useNewUrlParser: true });
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 
 app.engine("handlebars", exphds({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
-var htmlRoutes = require("./routes/htmlRoutes");
-var apiRoutes = require("./routes/apiRoutes");
-
-app.use(htmlRoutes);
-app.use(apiRoutes);
-
-
+var routes = require("./routes/routes");
+app.use(routes);
 
 
 app.listen(PORT, function() {
