@@ -15,8 +15,10 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/scraperHW", { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraperHW";
 
+// mongoose.connect("mongodb://localhost/scraperHW", { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI);
 
 
 app.engine("handlebars", exphds({defaultLayout: "main"}));
