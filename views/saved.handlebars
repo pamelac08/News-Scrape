@@ -6,11 +6,11 @@
   {{!-- <div class="collapse navbar-collapse" id="navbarNav"> --}}
   <div id="navbarNav"></div>
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/">Home </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/saved"></a> <span class="sr-only">(current)</span>Saved Articles</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="/saved"></a>Saved Articles</a>
       </li>
       {{!-- <li class="nav-item">
         <a class="nav-link" href="/scrape">Scrape New Articles</a>
@@ -24,8 +24,8 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container text-center">
-    <h1 class="display-4">Saved Articles</h1>
-    <p class="lead">Straight from the other LA (Ruston)</p>
+    <h1 class="display-4" id="jumbo-title">Saved Articles</h1>
+    <p class="lead" id="jumbo-p">News Scraper: Headlines from BBC</p>
   </div>
 </div>
 
@@ -38,7 +38,7 @@
 <div class="card">
   <div class="card-header">
     <div class="savedCardTitle">
-        <a href="https://www.bbc.com{{this.link}}" target="_blank">{{this.title}}</a>
+        <a class="article-title" href="https://www.bbc.com{{this.link}}" target="_blank">{{this.title}}</a>
     </div>
 
     <div id="DeleteArticleButton"><button  class="btn btn-primary deleteSaved" data-id="{{this._id}}">Delete from Saved</button></div>
@@ -46,14 +46,28 @@
     
   </div>
   <div class="card-body">
-    
-    {{!-- <p class="card-text">{{this.link}}</p> --}}
     <p class="card-text-body">Summary: {{this.summary}}</p>
    
   </div>
 </div>
 {{/if}}
 {{/each}}
+
+
+{{!-- if no articles in the database at all --}}
+{{#unless article}}
+<div class="card" id="noArticles">
+  <div class="card-body text-center">
+    <p class="card-text-body" id="noArticlesText">It looks like no articles are saved yet!</p>
+   
+   <a href="/" ><button class="btn btn-primary">Head back to the main page to save some!</button></a>
+   
+  </div>
+</div>
+
+{{/unless}}
+
+
     </div>
 </div>
 

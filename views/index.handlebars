@@ -24,10 +24,17 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container text-center">
-    <h1 class="display-4">News Scraper</h1>
-    <p class="lead">Straight from the other LA (Ruston)</p>
+    <h1 class="display-4" id="jumbo-title">News Scraper</h1>
+    <p class="lead" id="jumbo-p">Headlines from BBC</p>
   </div>
 </div>
+
+{{!-- <div>
+  <p>Getting started: load articles - or additional articles -  using the "Scrape New Articles" Link at the top of the page.
+    <br>
+     Go the the "Saved Articles" page to view any saved articles and to view and/or leave a comment on any saved articles.
+  </p>
+</div> --}}
 
 <div id="container-body">
     <div id="articles">
@@ -38,19 +45,29 @@
 <div class="card">
   <div class="card-header">
     <div class="cardTitle">
-     <a href="https://www.bbc.com{{this.link}}" target="_blank">{{this.title}}</a>
+     <a class="article-title" href="https://www.bbc.com{{this.link}}" target="_blank">{{this.title}}</a>
     </div>
     <div id="saveArticleButton"><button class="btn btn-primary saveButton" data-id="{{this._id}}">Save Article</button></div>
   </div>
   <div class="card-body">
-    
-    {{!-- <p class="card-text">{{this.link}}</p> --}}
     <p class="card-text-body">Summary: {{this.summary}}</p>
    
   </div>
 </div>
 {{/unless}}
 {{/each}}
+
+{{#unless article}}
+<div class="card" id="noArticles">
+  <div class="card-body text-center">
+    <p class="card-text-body" id="noArticlesText">It looks like there are no articles yet!</p>
+
+    <a href="/scrape" ><button class="btn btn-primary">Click here to load new articles!</button></a>
+   
+  </div>
+</div>
+
+{{/unless}}
     </div>
 </div>
 

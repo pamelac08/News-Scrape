@@ -1,6 +1,7 @@
 // for both index and saved html pages
 $(document).ready(function () {
 
+  
 
   
   // on index page, when the saved button is clicked, the article is moved to the 'saved articles' page    
@@ -49,27 +50,37 @@ $(document).ready(function () {
       method: "GET",
       url: "/articles/" + articleID,
     }).then(function (data) {
-      // console.log("open modal data: " + JSON.stringify(data));
+      console.log("open modal data: " + JSON.stringify(data));
       $.each(data.comment, function (i, eachComment) {
-        displayComments(eachComment, articleID);
+        displayComments(eachComment, data);
       });
       $("#commentsModal").modal("show");
     });
   };
 
   // function to create elements to display any comments for a given article
-  function displayComments(element, articleID) {
+  function displayComments(element, article) {
+
     $("#modal-title").empty();
-    var modalTitle = $("<p>").text("Comments for Article: " + articleID);
+    var modalTitle = $("<p>").text("Comments for Article: " + article.title);
     $("#modal-title").append(modalTitle);
 
-    var title = $("<p>").text(element);
+    
+    var newComment = $("<div>").addClass("comment-div");
+    var commentTextDiv = $("<div>").addClass("comment-text-div"); 
+
+    var title = $("<p>").text(element.title);
+    var body = $("<p>").text(element.body);
+    
+    commentTextDiv.append(title, body);
+
     var deleteButton = $("<button>")
-      .attr("data-comment-id", element)
-      .attr("data-article-id", articleID)
-      .addClass("delete-comment")
-      .text("Delete Comment");
-    var newComment = $("<div>").append(title, deleteButton);
+    .attr("data-comment-id", element._id)
+    .attr("data-article-id", article._id)
+    .addClass("delete-comment")
+    .text("Delete Comment");
+
+    newComment.append(commentTextDiv, deleteButton);
 
     $("#savedComments").append(newComment);
   };
@@ -94,8 +105,8 @@ $(document).ready(function () {
         body: $("#new-comment-body").val().trim(),
       },
     }).then(function (data) {
-    //   console.log("post response: ", data);
-      openModal(data._id);
+      // console.log("post response: ", data);
+      // openModal(data._id);
     });
   });
 /////////////////////////end of saving and displaying comments in modal

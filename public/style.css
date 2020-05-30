@@ -1,19 +1,81 @@
 
-/* applies to both pages */
+/* ////////////applies to both pages//////////////// */
+
+
+/* home & etc links in nav bar */
+.nav-link {
+    display: block;
+    padding: 0 .5rem;
+}
+.jumbotron {
+    background-image: url("./images/old-newspaper-350376_1920.jpg");
+    background-size: cover;
+}
+#jumbo-title {
+    font-size: 6rem;
+    font-family: cursive;
+    text-shadow: 3px 3px whitesmoke;
+}
+#jumbo-p {
+    font-size: 3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: whitesmoke;
+    font-weight: bolder;
+}
 .card {
     margin: 10px;
 }
-#nav,
-.card-header {
-    background-color: darkgray;
+#nav {
+    background-color: lightgray;
+}
+.card-header{
+    background-color: rgb(157, 202, 157)
+}
+.navbar-light .navbar-brand,
+#jumbo-title {
+    color: #007bff;
+}
+.navbar-brand {
+    font-size: 2rem;
 }
 .cardTitle,
 .savedCardTitle {
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 .card-text-body {
     font-size: 1rem;
 }
+.article-title {
+    font-weight: bold;
+}
+.article-title:link {
+    color: black;
+}
+.article-title:visited {
+    color: blue;
+}
+.article-title:hover {
+    color: whitesmoke;
+}
+/* .saveButton,
+.deleteSaved,
+#openComments {
+    background-color: darkgrey;
+} */
+#noArticlesText {
+    font-size: 2.65rem;
+    font-weight: bolder;
+}
+#noArticles {
+    background-color: rgb(106, 182, 106);
+    min-height: 200px;
+}
+.card-body {
+    margin-top: 1.35rem;
+}
+
+
+
 
 
 /* index page */
@@ -36,7 +98,29 @@
 }
 #DeleteArticleButton,
 #articleNoteButton {
-    width: 15%;
+    width: 17%;
     float: left
 }
 
+
+.comment-div {
+    border: 2px solid black;
+}
+.comment-text-div {
+    float: left;
+    width: 70%;
+}
+.delete-comment {
+    width: 30%;
+    clear: both;
+}
+.comment-title {
+    font-size: 1rem;
+}
+.comment-body {
+    font-size: 1rem;
+}
+
+#new-comment {
+    margin-top: 5px;
+}

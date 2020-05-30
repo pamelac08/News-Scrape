@@ -256,16 +256,16 @@ apiRouter.put("/removeArticle/:id", function(req, res) {
   
 // Route for grabbing a specific Article by id, populate it with it's note into the modal
 apiRouter.get("/articles/:id", function(req, res) {
-    db.Article.find({_id: req.params.id})
+    db.Article.findOne({_id: req.params.id})
     .populate({
       path: "comment",
       model: "Comment"
     })
     .then(function(article) {
       
-        // var articleComments = {
-        //   comment: article.comment
-        // }
+        var articleComments = {
+          comment: article.comment
+        }
       console.log("article and notes: ", article);
       // console.log("comments only: ", articleComments);
       // res.json(articleComments);
